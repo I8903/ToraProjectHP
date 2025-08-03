@@ -1,0 +1,403 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo img {
+  max-width: 120px;
+  width: 20vw;
+  height: auto;
+  display: block;
+}
+
+.header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  align-items: center;
+  height: 90px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  padding: 15px 4%;
+  gap: 20px;
+}
+
+/* ハンバーガーボタン */
+.sp-menu {
+  position: fixed;
+  top: 32px;
+  right: 4%;
+  width: 35px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.sp-menu .bar {
+  height: 4px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ハンバーガー開閉時のアニメーション */
+.sp-menu.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(9px, 9px);
+}
+.sp-menu.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.sp-menu.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(9px, -9px);
+}
+
+/* スライドメニュー */
+.slide-menu {
+  position: fixed;
+  top: 0;
+  right: -80%;
+  width: 40%;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -3px 0 8px rgba(0, 0, 0, 0.2);
+  transition: right 0.4s ease;
+  z-index: 1000;
+  text-align: center;
+  padding: 80px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* メニューリスト */
+.slide-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0;
+}
+
+/* メニュー項目 */
+.slide-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  transition: color 0.2s ease;
+}
+
+.slide-menu li a:hover {
+  opacity: 0.7;
+}
+
+/* ロゴ画像のサイズ調整 */
+.slide-menu li:last-child {
+  text-align: center;
+}
+.slide-menu li:last-child img {
+  width: 120px;
+  height: auto;
+  margin-top: 40px;
+}
+
+/* メニューが開いた状態 */
+.slide-menu.open {
+  right: 0;
+}
+
+/* オーバーレイ背景 */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pc-menu {
+  display: none;
+}
+
+@media (min-width: 1300px) {
+  .sp-menu {
+    display: none;
+  }
+
+  .pc-menu {
+    display: block;
+    margin-left: auto;
+  }
+
+  .pc-menu ul {
+    display: flex;
+    gap: 25px;
+  }
+
+  .pc-menu li a {
+    color: #333;
+    font-size: 18px;
+    transition: color 0.2s ease;
+  }
+  .pc-menu li a:hover {
+    opacity: 0.7;
+  }
+
+  .pc-menu li:last-child a {
+    border: 1px solid #ffa500;
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color: #ffa500;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+/* フッター */
+.footer {
+  font-family: "Open Sans", sans-serif;
+  padding: 10px 20px;
+  font-size: 12px;
+  background-color: #b9854a;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-logo img {
+  width: 80px;
+  margin: 0;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.footer-info h2 {
+  font-size: 14px;
+  color: white;
+  margin: 0;
+}
+
+.footer-texts {
+  text-align: left;
+  margin-left: 0;
+}
+
+.footer-texts p,
+.footer-texts a {
+  font-size: 11px;
+  color: white;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.copyright {
+  font-size: 10px;
+  color: white;
+  margin-top: 5px;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  /* ヘッダー */
+
+  body,
+  html {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .header {
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  .logo img {
+    width: 80px;
+    margin-left: 0;
+  }
+
+  .sp-menu {
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    right: 0;
+  }
+
+  .sp-menu #open {
+    font-size: 28px;
+    line-height: 1;
+    margin-top: 0;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .sp-menu #open.hidde {
+    display: none;
+  }
+
+  /* オーバーレイメニュー */
+  .overlay {
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    transition: right 0.3s ease;
+  }
+
+  .overlay.show {
+    right: 0;
+  }
+
+  .menu {
+    color: #b9854a;
+    font-size: 46px;
+    padding: 10px;
+  }
+
+  .overlay nav ul {
+    padding: 0;
+  }
+
+  .overlay nav ul li {
+    margin: 8px 0;
+  }
+
+  .overlay nav ul li a {
+    font-size: 18px;
+  }
+
+  .overlay nav h2.highlight {
+    font-size: 38px;
+    padding: 10px;
+  }
+
+  .overlay #close {
+    font-size: 20px;
+    margin: 10px;
+  }
+
+  .footer {
+    font-size: 10px;
+  }
+
+  .footer-info h2 {
+    font-size: 10px;
+  }
+
+  .footer-texts p,
+  .footer-texts a {
+    font-size: 8px;
+  }
+
+  .copyright {
+    font-size: 6px;
+  }
+
+  .footer-logo img {
+    width: 60px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  /* ヘッダー */
+  .header {
+    height: 80px;
+    padding: 10px 20px;
+  }
+
+  .logo img {
+    width: 100px;
+    margin-left: 10px;
+  }
+
+  .sp-menu {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  .sp-menu #open {
+    font-size: 28px;
+    margin-top: 0;
+    margin-right: 0;
+  }
+
+  /* オーバーレイメニュー */
+  .overlay {
+    width: 60%;
+    right: -60%;
+    padding: 10px;
+  }
+
+  .overlay.show {
+    right: 0;
+  }
+
+  .menu {
+    color: #b9854a;
+    font-size: 50px;
+    margin: 20px;
+  }
+
+  .overlay nav h2.highlight {
+    font-size: 48px;
+    padding: 10px;
+    margin: 20px;
+  }
+
+  .overlay nav ul li {
+    padding: 28px;
+  }
+
+  .overlay nav ul li a {
+    font-size: 24px;
+  }
+
+  .overlay .logo img {
+    width: 120px;
+  }
+
+  /* PCメニューは引き続き非表示に */
+  .pc-menu {
+    display: none;
+  }
+}
