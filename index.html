@@ -4,57 +4,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TORA PROJECT株式会社 | TOPページ </title>
-  <link rel="icon" href="img/rogo1.png" type="image/x-icon">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/top.css">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="color-scheme" content="light dark">
+
+  <!----- タイトル ----->
+  <title>TORA PROJECT株式会社 | Web制作・プログラミングスクール・営業代行（大阪）</title>
+  <meta name="description" content="TORA PROJECT株式会社は、大阪発のWeb制作・プログラミングスクール・営業代行を一気通貫で提供。生成AI活用と実務導線に強い体制で、中小企業と個人の成果創出を支援します。無料相談はLINEから。">
+  <link rel="canonical" href="https://toraproject.jp/">
+  <meta name="robots" content="index,follow">
+
+  <!----- OGP / Twitter ----->
+  <meta property="og:title" content="TORA PROJECT株式会社 | Web制作・プログラミングスクール・営業代行（大阪）">
+  <meta property="og:description" content="生成AI活用まで含めた実装支援。Web制作・プログラミング教育・営業代行を一気通貫で。無料相談はLINEから。">
+  <meta property="og:url" content="https://toraproject.jp/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TORA PROJECT株式会社">
+  <meta property="og:image" content="https://toraproject.jp/img/pc_hero_bg.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://toraproject.jp/img/pc_hero_bg.jpg">
+
+  <!-- Favicon / PWA（パスとサイズを明示） -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b1a3a">
+
+  <!-- Fonts 最適化（先読み） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap"
     rel="stylesheet">
+
+  <!-- CSS：ベース→ページ固有の順 -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/top.css">
+
+  <!-- 構造化データ（最小のOrganization＋サイト内検索アクションの例） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TORA PROJECT株式会社",
+    "url": "https://toraproject.jp/",
+    "logo": "https://toraproject.jp/img/logo-mark-512.png",
+    "sameAs": []
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://toraproject.jp/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://toraproject.jp/?s={query}",
+      "query-input": "required name=query"
+    }
+  }
+  </script>
 </head>
 
-<body>
-  <header class="header">
-    <div class="logo">
-      <h1>
-        <a href="index.html">
-          <img src="img/rogo1.png" alt="ロゴ画像">
-        </a>
-      </h1>
-    </div>
 
-    <nav class="pc-menu">
-      <ul>
-        <li><a href="company.html">会社概要</a></li>
-        <li><a href="aitraining.html">生成AI研修</a></li>
-        <li><a href="Q&A.html">よくある質問</a></li>
-        <li><a href="https://forms.gle/2iZvgSGior4KzKQ19">お問い合わせ</a></li>
+<body>
+  <!-- キーボード利用者向けスキップリンク -->
+<a class="skip-link" href="#main">本文へスキップ</a>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <!-- ブランドロゴ：見出し(h1)は本文側で使う想定 -->
+    <a class="brand" href="/index.html" aria-label="TORA PROJECT株式会社 ホーム">
+      <img src="/img/rogo1.png" width="140" height="40" alt="TORA PROJECT株式会社 ロゴ">
+    </a>
+
+    <!-- PCナビ -->
+    <nav class="pc-menu" aria-label="メイン">
+      <ul class="nav-list">
+        <li><a href="/company.html">会社概要</a></li>
+        <li><a href="/aitraining.html">事業内容</a></li>
+        <li>
+          <a href="https://forms.gle/2iZvgSGior4KzKQ19" target="_blank" rel="noopener noreferrer">
+            お問い合わせ
+          </a>
+        </li>
       </ul>
     </nav>
 
     <!-- ハンバーガー -->
-    <div class="sp-menu" id="menu-toggle">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
+    <button class="sp-menu" id="menu-toggle"
+            aria-label="メニューを開く" aria-controls="slide-menu" aria-expanded="false">
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+    </button>
+  </div>
 
-    <!-- オーバーレイ -->
-    <div class="overlay" id="overlay"></div>
+  <!-- オーバーレイ -->
+  <div class="overlay" id="overlay" hidden></div>
 
-    <!-- スライドメニュー -->
-    <nav class="slide-menu" id="slide-menu">
-      <ul>
-        <li><a href="company.html">会社概要</a></li>
-        <li><a href="aitraining.html">生成AI研修</a></li>
-        <li><a href="https://forms.gle/2iZvgSGior4KzKQ19">お問い合わせ</a></li>
-        <li><a href="Q&A.html">よくある質問</a></li>
-        <li><a href="index.html"><img src="img/rogo1.png" alt="ロゴ画像"></a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
+  <!-- スライドメニュー -->
+  <nav class="slide-menu" id="slide-menu" aria-label="モバイルメニュー" hidden>
+    <ul class="slide-list">
+      <li><a href="/company.html">会社概要</a></li>
+      <li><a href="/aitraining.html">生成AI研修</a></li>
+      <li><a href="/faq.html">よくある質問</a></li>
+      <li>
+        <a href="https://forms.gle/2iZvgSGior4KzKQ19" target="_blank" rel="noopener noreferrer">
+          お問い合わせ
+        </a>
+      </li>
+      <li class="slide-logo">
+        <a href="/index.html" aria-label="ホームに戻る">
+          <img src="/img/rogo1.png" width="120" height="34" alt="TORA PROJECT株式会社 ロゴ">
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+  <main id="main">
     <!-- TOP -->
     <div class="main-visual">
       <img src="img/heroimage.png" alt="メイン画像" class="fade-in">
