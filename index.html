@@ -69,54 +69,28 @@
 
 
 <body>
-<header class="site-header" role="banner">
-  <div class="header-inner">
-    <!-- ブランドロゴ：見出し(h1)は本文側で使う想定 -->
-    <a class="brand" href="/index.html" aria-label="TORA PROJECT株式会社 ホーム">
-      <img src="/img/rogo1.png" width="140" height="40" alt="TORA PROJECT株式会社 ロゴ">
-    </a>
-
-    <!-- PCナビ -->
-    <nav class="pc-menu" aria-label="メイン">
-      <ul class="nav-list">
-        <li><a href="/company.html">会社概要</a></li>
-        <li><a href="/aitraining.html">事業内容</a></li>
-        <li>
-          <a href="https://forms.gle/2iZvgSGior4KzKQ19" target="_blank" rel="noopener noreferrer">
-            お問い合わせ
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- ハンバーガー -->
-    <button class="sp-menu" id="menu-toggle"
-            aria-label="メニューを開く" aria-controls="slide-menu" aria-expanded="false">
-      <span class="bar" aria-hidden="true"></span>
-      <span class="bar" aria-hidden="true"></span>
-      <span class="bar" aria-hidden="true"></span>
-    </button>
+<header class="header">
+  <div class="logo">
+    <h1> <a href="index.html"> <img src="img/rogo1.png" alt="ロゴ画像"> </a> </h1>
   </div>
-
-  <!-- オーバーレイ -->
-  <div class="overlay" id="overlay" hidden></div>
-
-  <!-- スライドメニュー -->
-  <nav class="slide-menu" id="slide-menu" aria-label="モバイルメニュー" hidden>
-    <ul class="slide-list">
-      <li><a href="/company.html">会社概要</a></li>
-      <li><a href="/aitraining.html">生成AI研修</a></li>
-      <li><a href="/faq.html">よくある質問</a></li>
-      <li>
-        <a href="https://forms.gle/2iZvgSGior4KzKQ19" target="_blank" rel="noopener noreferrer">
-          お問い合わせ
-        </a>
-      </li>
-      <li class="slide-logo">
-        <a href="/index.html" aria-label="ホームに戻る">
-          <img src="/img/rogo1.png" width="120" height="34" alt="TORA PROJECT株式会社 ロゴ">
-        </a>
-      </li>
+  <nav class="pc-menu">
+    <ul>
+      <li><a href="company.html">会社概要</a></li>
+      <li><a href="aitraining.html">生成AI研修</a></li>
+      <li><a href="Q&A.html">よくある質問</a></li>
+      <li><a href="https://forms.gle/2iZvgSGior4KzKQ19">お問い合わせ</a></li>
+    </ul>
+  </nav> <!-- ハンバーガー -->
+  <div class="sp-menu" id="menu-toggle"> <span class="bar"></span> <span class="bar"></span> <span class="bar"></span>
+  </div> <!-- オーバーレイ -->
+  <div class="overlay" id="overlay"></div> <!-- スライドメニュー -->
+  <nav class="slide-menu" id="slide-menu">
+    <ul>
+      <li><a href="company.html">会社概要</a></li>
+      <li><a href="aitraining.html">生成AI研修</a></li>
+      <li><a href="https://forms.gle/2iZvgSGior4KzKQ19">お問い合わせ</a></li>
+      <li><a href="Q&A.html">よくある質問</a></li>
+      <li><a href="index.html"><img src="img/rogo1.png" alt="ロゴ画像"></a></li>
     </ul>
   </nav>
 </header>
